@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆瓣电影日历（2017-2025）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+    <div class="max-w-3xl mx-auto">
+        <!-- 标题 -->
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">豆瓣电影日历（2017-2025）</h1>
+
+        <!-- Tab 导航栏 -->
+        <div class="flex justify-center space-x-2 mb-6">
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="README">
+                说明
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2017">
+                2017
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2018">
+                2018
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2019">
+                2019
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2020">
+                2020
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2021">
+                2021
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2022">
+                2022
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2023">
+                2023
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2024">
+                2024
+            </button>
+            <button
+                class="tab-button px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm transition-colors"
+                data-year="2025">
+                2025
+            </button>
+        </div>
+
+        <!-- 电影列表容器 -->
+        <div id="movie-list-container" class="relative space-y-4">
+            <!-- 加载动画 -->
+            <div id="loading"
+                class="hidden absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-75">
+                <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+            </div>
+            <!-- 每年的电影列表将动态插入到这里 -->
+        </div>
+
+        <!-- README 内容 -->
+        <div id="readme-content" class="bg-white rounded-lg shadow-md p-6">
+            <div class="prose">
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">数据来源</h2>
+                <p class="text-gray-700 mb-4">
+                    <a href="https://www.douban.com/people/JingLoo/" target="_blank"
+                        class="text-blue-600 hover:text-blue-800">回笼教教主</a>
+                </p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li><a href="https://www.douban.com/doulist/45682365/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2017</a></li>
+                    <li><a href="https://www.douban.com/doulist/46404505/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2018</a></li>
+                    <li><a href="https://www.douban.com/doulist/111364700/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2019</a></li>
+                    <li><a href="https://www.douban.com/doulist/122149527/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2020</a></li>
+                    <li><a href="https://www.douban.com/doulist/134510869/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2021</a></li>
+                    <li><a href="https://www.douban.com/doulist/147875590/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2022</a></li>
+                    <li><a href="https://www.douban.com/doulist/153455457/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2023</a></li>
+                    <li><a href="https://www.douban.com/doulist/157453481/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影生活日历2024</a></li>
+                    <li><a href="https://www.douban.com/doulist/160687946/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">豆瓣电影日历2025</a></li>
+                </ul>
+                <p class="text-gray-700 mb-4">
+                    <a href="https://www.douban.com/people/1670265/" target="_blank"
+                        class="text-blue-600 hover:text-blue-800">G7（柳一白）</a>
+                </p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li><a href="https://www.douban.com/doulist/140983040/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2019年 豆瓣电影日历</a></li>
+                    <li><a href="https://www.douban.com/doulist/141211524/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2020年 豆瓣电影日历</a></li>
+                    <li><a href="https://www.douban.com/doulist/141211802/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2021年 豆瓣电影日历</a></li>
+                    <li><a href="https://www.douban.com/doulist/147208859/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2022年 豆瓣电影日历</a></li>
+                    <li><a href="https://www.douban.com/doulist/152759295/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2023年 豆瓣电影日历</a></li>
+                    <li><a href="https://www.douban.com/doulist/156580671/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2024年 豆瓣电影日历</a></li>
+                    <li><a href="https://www.douban.com/doulist/160155208/" target="_blank"
+                            class="text-blue-600 hover:text-blue-800">2025年 豆瓣电影日历</a></li>
+                </ul>
+                <h2 class="text-xl font-semibold text-gray-700 mb-4 mt-6">下列日期无电影推荐</h2>
+                <ul class="list-disc pl-6">
+                    <li>2017.02.26：第89届奥斯卡颁奖典礼 2017年2月26日</li>
+                    <li>2017.05.12：四川汶川发生里氏8.0级地震 2008年5月12日 14:28</li>
+                    <li>2017.05.17：戛纳电影节70周年 开幕式 2017年5月17日</li>
+                </ul>
+                <h2 class="text-xl font-semibold text-gray-700 mb-4 mt-6">已删除条目</h2>
+                <ul class="list-disc pl-6">
+                    <li>2017.11.05 V字仇杀队</li>
+                    <li>2018.03.24</li>
+                    <li>2018.10.03 死亡笔记</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取容器和 Tab 按钮
+        const movieListContainer = document.getElementById('movie-list-container');
+        const readmeContent = document.getElementById('readme-content');
+        const loadingIndicator = document.getElementById('loading');
+        const tabButtons = document.querySelectorAll('.tab-button');
+
+        // 缓存已加载的年份数据
+        const loadedYears = new Map();
+
+        // 初始化：默认加载 README
+        let currentYear = tabButtons[0].dataset.year;
+        showReadme();
+
+        // 为每个 Tab 按钮绑定点击事件
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const year = button.dataset.year;
+                if (year !== currentYear) {
+                    currentYear = year;
+                    if (year === "README") {
+                        showReadme();
+                    } else {
+                        loadMovieList(year);
+                    }
+                }
+            });
+        });
+
+        // 显示 README 内容
+        function showReadme() {
+            movieListContainer.classList.add('hidden');
+            readmeContent.classList.remove('hidden');
+        }
+
+        // 加载电影列表
+        function loadMovieList(year) {
+            // 隐藏 README 内容
+            readmeContent.classList.add('hidden');
+            movieListContainer.classList.remove('hidden');
+
+            // 显示加载动画
+            loadingIndicator.classList.remove('hidden');
+
+            // 如果已经加载过，直接从缓存中显示
+            if (loadedYears.has(year)) {
+                movieListContainer.innerHTML = loadedYears.get(year);
+                loadingIndicator.classList.add('hidden');
+                return;
+            }
+
+            // 动态加载对应年份的 HTML 文件
+            fetch(`data/${year}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    movieListContainer.innerHTML = html;
+                    loadedYears.set(year, html);
+                })
+                .catch(error => {
+                    console.error('加载失败:', error);
+                    movieListContainer.innerHTML = '<div class="text-red-500">加载失败，请稍后重试。</div>';
+                })
+                .finally(() => {
+                    loadingIndicator.classList.add('hidden');
+                });
+        }
+    </script>
+</body>
+
+</html>
